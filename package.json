@@ -1,0 +1,20 @@
+{
+  "name": "microfronts",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": ["host", "remote-react", "remote-vue", "remote-angular"],
+  "scripts": {
+    "dev": "concurrently -k -n host,react,vue,angular -c blue,green,magenta,yellow \"npm run dev --workspace host\" \"npm run dev --workspace remote-react\" \"npm run dev --workspace remote-vue\" \"npm run dev --workspace remote-angular\"",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "~5.5.4"
+  }
+}
