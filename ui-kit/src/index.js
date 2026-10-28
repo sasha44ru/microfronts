@@ -1,6 +1,6 @@
-import './tokens.css';
-import './button.js';
-import './card.js';
-import './badge.js';
-import './input.js';
-import './modal.js';
+import './tokens.scss';
+import './button/button.js';
+import './card/card.js';
+import './badge/badge.js';
+import './input/input.js';
+import './modal/modal.js';

@@ -1,0 +1,11 @@
+:host { display: inline-block; font-family: var(--ui-font); }
+label { display: grid; gap: 4px; font-size: 13px; color: var(--ui-color-text); }
+input {
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius);
+  font: inherit;
+}
+input:focus { outline: 2px solid var(--ui-color-primary); outline-offset: 1px; }
+input.invalid { border-color: var(--ui-color-danger); }
+.error { color: var(--ui-color-danger); font-size: 12px; }

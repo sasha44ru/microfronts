@@ -3,9 +3,15 @@
   "private": true,
   "version": "1.0.0",
   "description": "",
-  "workspaces": ["host", "remote-react", "remote-vue", "remote-angular"],
+  "workspaces": [
+    "host",
+    "remote-react",
+    "remote-vue",
+    "remote-angular"
+  ],
   "scripts": {
     "dev": "concurrently -k -n host,react,vue,angular -c blue,green,magenta,yellow \"npm run dev --workspace host\" \"npm run dev --workspace remote-react\" \"npm run dev --workspace remote-vue\" \"npm run dev --workspace remote-angular\"",
+    "mock": "json-server --watch mock/db.json --port 4000 --host 127.0.0.1",
     "build": "npm run build --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present"
   },
@@ -15,6 +21,9 @@
   "type": "commonjs",
   "devDependencies": {
     "concurrently": "^8.2.2",
+    "json-server": "^0.17.4",
+    "sass": "^1.106.1",
+    "sass-loader": "^17.1.0",
     "typescript": "~5.5.4"
   }
 }

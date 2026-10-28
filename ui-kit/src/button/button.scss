@@ -1,0 +1,19 @@
+:host { display: inline-block; }
+button {
+  font-family: var(--ui-font);
+  font-size: 14px;
+  padding: var(--ui-space-2) var(--ui-space-4);
+  border-radius: var(--ui-radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: #fff;
+  background: var(--ui-color-primary);
+}
+button:hover { background: var(--ui-color-primary-hover); }
+button.ghost {
+  background: transparent;
+  color: var(--ui-color-primary);
+  border-color: var(--ui-color-primary);
+}
+button.danger { background: var(--ui-color-danger); }
+button:disabled { opacity: .5; cursor: not-allowed; }

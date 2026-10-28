@@ -1,0 +1,43 @@
+:host { display: none; }
+:host([open]) { display: block; }
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  display: grid;
+  place-items: center;
+  padding: var(--ui-space-4);
+  z-index: 1000;
+}
+.dialog {
+  width: min(480px, 100%);
+  background: var(--ui-color-bg);
+  color: var(--ui-color-text);
+  font-family: var(--ui-font);
+  border-radius: var(--ui-radius);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ui-space-4);
+  border-bottom: 1px solid var(--ui-color-border);
+}
+h2 { margin: 0; font-size: 16px; }
+.close {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--ui-color-muted);
+}
+.body { padding: var(--ui-space-4); }
+footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--ui-space-2);
+  padding: var(--ui-space-4);
+  border-top: 1px solid var(--ui-color-border);
+}

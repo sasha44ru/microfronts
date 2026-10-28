@@ -35,6 +35,22 @@ module.exports = {
                 },
             },
             {
+                test: /\.s[ac]ss$/i,
+                oneOf: [
+                    {
+                        include: path.resolve(__dirname, '../ui-kit/src'),
+                        exclude: /tokens\.scss$/,
+                        use: [
+                            { loader: 'css-loader', options: { exportType: 'string' } },
+                            'sass-loader',
+                        ],
+                    },
+                    {
+                        use: ['style-loader', 'css-loader', 'sass-loader'],
+                    },
+                ],
+            },
+            {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },

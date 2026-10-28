@@ -1,3 +1,4 @@
+import styles from './input.scss'
 class UiInput extends HTMLElement {
     static get observedAttributes() {
         return ['label', 'placeholder', 'type', 'value', 'error'];
@@ -44,19 +45,7 @@ class UiInput extends HTMLElement {
         const error = this.getAttribute('error') || '';
 
         this.shadowRoot.innerHTML = `
-      <style>
-        :host { display: inline-block; font-family: var(--ui-font); }
-        label { display: grid; gap: 4px; font-size: 13px; color: var(--ui-color-text); }
-        input {
-          padding: var(--ui-space-2) var(--ui-space-3);
-          border: 1px solid var(--ui-color-border);
-          border-radius: var(--ui-radius);
-          font: inherit;
-        }
-        input:focus { outline: 2px solid var(--ui-color-primary); outline-offset: 1px; }
-        input.invalid { border-color: var(--ui-color-danger); }
-        .error { color: var(--ui-color-danger); font-size: 12px; }
-      </style>
+      <style>${styles}</style>
       <label>
         ${label ? `<span>${label}</span>` : ''}
         <input type="${type}" placeholder="${placeholder}" value="${value}" class="${error ? 'invalid' : ''}" />

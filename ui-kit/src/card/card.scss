@@ -1,0 +1,14 @@
+:host { display: block; }
+.card {
+  background: var(--ui-color-bg);
+  color: var(--ui-color-text);
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius);
+  padding: var(--ui-space-4);
+  font-family: var(--ui-font);
+}
+.card__title {
+  margin: 0 0 var(--ui-space-3);
+  font-size: 16px;
+  font-weight: 600;
+}

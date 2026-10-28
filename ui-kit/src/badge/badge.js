@@ -1,3 +1,4 @@
+import styles from './badge.scss'
 class UiBadge extends HTMLElement {
     static get observedAttributes() {
         return ['tone'];
@@ -20,22 +21,7 @@ class UiBadge extends HTMLElement {
         const tone = this.getAttribute('tone') || 'neutral';
 
         this.shadowRoot.innerHTML = `
-      <style>
-        :host { display: inline-block; }
-        .badge {
-          display: inline-block;
-          font-family: var(--ui-font);
-          font-size: 12px;
-          font-weight: 600;
-          padding: 2px 8px;
-          border-radius: 999px;
-          background: #eef2ff;
-          color: #3730a3;
-        }
-        .success { background: #e7f6ec; color: #067647; }
-        .warning { background: #fef3e2; color: #b54708; }
-        .danger  { background: #fee4e2; color: #b42318; }
-      </style>
+      <style>${styles}</style>
       <span class="badge ${tone}"><slot></slot></span>
     `;
     }
