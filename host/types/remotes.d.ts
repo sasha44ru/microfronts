@@ -14,3 +14,5 @@ declare module 'remoteAngular/AngularMount' {
     const mount: (el: HTMLElement) => Promise<() => void>;
     export default mount;
 }
+
+declare module '@mf-demo/ui-kit';

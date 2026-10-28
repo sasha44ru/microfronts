@@ -8,10 +8,23 @@ module.exports = {
     mode: 'development',
     entry: path.resolve(__dirname, 'src/index.ts'),
     output: { publicPath: 'auto', clean: true },
-    resolve: { extensions: ['.vue', '.ts', '.js'] },
+    resolve: {
+        extensions: ['.vue', '.ts', '.js'],
+        alias: {
+            '@mf-demo/ui-kit': path.resolve(__dirname, '../ui-kit/src/index.js'),
+        },
+    },
     module: {
         rules: [
-            { test: /\.vue$/, loader: 'vue-loader' },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                options: {
+                    compilerOptions: {
+                        isCustomElement: (tag) => tag.startsWith('ui-'),
+                    },
+                },
+            },
             {
                 test: /\.ts$/,
                 include: path.resolve(__dirname, 'src'),
@@ -25,6 +38,7 @@ module.exports = {
                     },
                 },
             },
+            { test: /\.css$/, use: ['style-loader', 'css-loader'] },
         ],
     },
     plugins: [

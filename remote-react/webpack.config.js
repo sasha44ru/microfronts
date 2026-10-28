@@ -14,6 +14,9 @@ module.exports = {
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
+        alias: {
+            '@mf-demo/ui-kit': path.resolve(__dirname, '../ui-kit/src/index.js'),
+        },
     },
     module: {
         rules: [

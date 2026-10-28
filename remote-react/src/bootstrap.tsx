@@ -1,3 +1,4 @@
+import '@mf-demo/ui-kit';
 import { createRoot } from 'react-dom/client';
 import UsersPage from './UsersPage';
 

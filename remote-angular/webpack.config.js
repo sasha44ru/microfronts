@@ -8,10 +8,16 @@ module.exports = {
     mode: 'development',
     entry: path.resolve(__dirname, 'src/index.ts'),
     output: { publicPath: 'auto', clean: true },
-    resolve: { extensions: ['.ts', '.js'] },
+    resolve: {
+        extensions: ['.ts', '.js'],
+        alias: {
+            '@mf-demo/ui-kit': path.resolve(__dirname, '../ui-kit/src/index.js'),
+        },
+    },
     module: {
         rules: [
             { test: /\.ts$/, loader: '@ngtools/webpack' },
+            { test: /\.css$/, use: ['style-loader', 'css-loader'] },
         ],
     },
     plugins: [

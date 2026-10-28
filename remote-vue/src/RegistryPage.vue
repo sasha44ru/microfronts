@@ -1,9 +1,8 @@
 <template>
-  <section>
-    <h2>Реестр (remote-vue)</h2>
+  <ui-card heading="Реестр (remote-vue)">
     <p>Записей: {{ count }}</p>
-    <button @click="count++">Добавить</button>
-  </section>
+    <ui-button @click="count++">Добавить</ui-button>
+  </ui-card>
 </template>
 
 <script setup lang="ts">

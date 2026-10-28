@@ -1,3 +1,4 @@
+import '@mf-demo/ui-kit';
 import '@angular/compiler';
 import 'zone.js';
 import { createComponent } from '@angular/core';
